@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experiência Criativa — Computação & IA</title>
+<meta name="description" content="Site interativo da disciplina Experiência Criativa: Explorando Computação e IA.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- cursor personalizado -->
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav">
+  <span class="nav-logo">EXP<span class="dot">.</span>CRIATIVA</span>
+  <ul class="nav-links">
+    <li><a href="#sobre">01 Sobre</a></li>
+    <li><a href="#galeria">02 Galeria</a></li>
+    <li><a href="#som">03 Som</a></li>
+    <li><a href="#video">04 Vídeo</a></li>
+    <li><a href="#laboratorio">05 Laboratório</a></li>
+  </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">☰</button>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="topo">
+  <canvas id="neuralCanvas" class="hero-canvas"></canvas>
+  <div class="hero-content">
+    <p class="eyebrow">disciplina · computação criativa</p>
+    <h1 class="hero-title">
+      Experiência<br>
+      <span class="outline">Criativa</span>
+    </h1>
+    <p class="hero-sub">explorando computação e inteligência artificial através de código, imagem, som e movimento.</p>
+    <a href="#sobre" class="btn-scroll">
+      <span>rolar</span>
+      <span class="arrow">↓</span>
+    </a>
+  </div>
+  <p class="hero-hint">mova o cursor — a rede reage a você</p>
+  <img class="hero-bg-img" src="https://picsum.photos/seed/codecreative/1600/1000" alt="" aria-hidden="true">
+</header>
+
+<main>
+
+  <!-- ===================== SOBRE ===================== -->
+  <section class="section" id="sobre">
+    <div class="section-head">
+      <span class="tag">01</span>
+      <h2>Sobre o projeto</h2>
+    </div>
+    <div class="about-grid">
+      <p class="about-text">
+        Este site reúne os experimentos da disciplina <strong>Experiência Criativa: Explorando Computação e IA</strong>.
+        A proposta é simples: tratar o código como material de criação — assim como tinta, papel ou som —
+        e usar a tela do navegador como ateliê. Cada seção abaixo é uma peça independente, construída em
+        <span class="mono">HTML</span>, <span class="mono">CSS</span> e <span class="mono">JavaScript</span> puro,
+        sem bibliotecas externas pesadas, para que o processo fique visível e editável.
+      </p>
+      <ul class="about-list">
+        <li><span class="mono">01</span> Visuais generativos desenhados em tempo real no <em>canvas</em></li>
+        <li><span class="mono">02</span> Som sintetizado por código com a Web Audio API</li>
+        <li><span class="mono">03</span> Vídeo como camada de contexto e registro do processo</li>
+        <li><span class="mono">04</span> Um laboratório interativo para o público desenhar</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== GALERIA GENERATIVA ===================== -->
+  <section class="section section-dark" id="galeria">
+    <div class="section-head">
+      <span class="tag">02</span>
+      <h2>Galeria generativa</h2>
+      <p class="section-note">cada quadro é desenhado por um algoritmo diferente. clique em um quadro para gerar uma nova versão.</p>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <figure class="art-card" data-sketch="flowfield">
+        <img src="https://picsum.photos/seed/flowfield/600/600" alt="Fotografia abstrata associada ao esboço de campo de fluxo">
+        <canvas></canvas>
+        <figcaption><span class="mono">/flowfield</span> campo de fluxo</figcaption>
+      </figure>
+      <figure class="art-card" data-sketch="tree">
+        <img src="https://picsum.photos/seed/recursivetree/600/600" alt="Fotografia abstrata associada ao esboço de ramificação recursiva">
+        <canvas></canvas>
+        <figcaption><span class="mono">/tree</span> ramificação recursiva</figcaption>
+      </figure>
+      <figure class="art-card" data-sketch="cells">
+        <img src="https://picsum.photos/seed/cellularautomata/600/600" alt="Fotografia abstrata associada ao esboço de autômato celular">
+        <canvas></canvas>
+        <figcaption><span class="mono">/cells</span> autômato celular</figcaption>
+      </figure>
+      <figure class="art-card" data-sketch="orbits">
+        <img src="https://picsum.photos/seed/harmonicorbits/600/600" alt="Fotografia abstrata associada ao esboço de órbitas harmônicas">
+        <canvas></canvas>
+        <figcaption><span class="mono">/orbits</span> órbitas harmônicas</figcaption>
+      </figure>
+    </div>
+
+    <p class="upload-note">📎 cada quadro mistura uma fotografia (clique para ver) com um algoritmo gerativo por cima. para usar suas próprias fotos, troque o <span class="mono">src</span> do <span class="mono">&lt;img&gt;</span> por <span class="mono">assets/sua-imagem.jpg</span> dentro de <span class="mono">index.html</span>.</p>
+  </section>
+
+  <!-- ===================== INSPIRAÇÕES VISUAIS ===================== -->
+  <section class="section" id="inspiracoes">
+    <div class="section-head">
+      <span class="tag">02.1</span>
+      <h2>Inspirações visuais</h2>
+      <p class="section-note">fotografias que conversam com os temas da disciplina: código, redes e inteligência artificial.</p>
+    </div>
+    <div class="inspo-grid">
+      <figure class="inspo-card">
+        <img src="https://picsum.photos/seed/aicode1/700/500" alt="Fotografia relacionada a programação e código">
+        <figcaption>código como matéria-prima</figcaption>
+      </figure>
+      <figure class="inspo-card">
+        <img src="https://picsum.photos/seed/aicode2/700/900" alt="Fotografia relacionada a redes e conexões">
+        <figcaption>redes e conexões</figcaption>
+      </figure>
+      <figure class="inspo-card">
+        <img src="https://picsum.photos/seed/aicode3/700/500" alt="Fotografia relacionada a inteligência artificial e dados">
+        <figcaption>dados em movimento</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== SOM ===================== -->
+  <section class="section" id="som">
+    <div class="section-head">
+      <span class="tag">03</span>
+      <h2>Sequenciador sonoro</h2>
+      <p class="section-note">clique nos quadrados para compor um padrão. o navegador sintetiza o som — nenhum arquivo de áudio é necessário.</p>
+    </div>
+
+    <div class="synth">
+      <div class="synth-grid" id="synthGrid"></div>
+      <div class="synth-controls">
+        <button id="playBtn" class="btn-primary">▶ tocar</button>
+        <label class="tempo-label">
+          tempo
+          <input type="range" id="tempoRange" min="60" max="200" value="120">
+        </label>
+        <label class="tempo-label">
+          onda
+          <select id="waveSelect">
+            <option value="sine">seno</option>
+            <option value="triangle">triângulo</option>
+            <option value="square">quadrada</option>
+            <option value="sawtooth">dente de serra</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== VÍDEO ===================== -->
+  <section class="section section-dark" id="video">
+    <div class="section-head">
+      <span class="tag">04</span>
+      <h2>Registro em vídeo</h2>
+      <p class="section-note">espaço para o vídeo do processo criativo ou da apresentação do projeto.</p>
+    </div>
+
+    <div class="video-wrap">
+      <video id="processVideo" controls playsinline poster="https://picsum.photos/seed/videoprocesso/1280/720">
+        <source src="assets/video-processo.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+      <div class="video-fallback" id="videoFallback">
+        <canvas id="videoFallbackCanvas"></canvas>
+        <p>📎 nenhum vídeo encontrado em <span class="mono">assets/video-processo.mp4</span> — adicione o arquivo para substituir esta animação de espera.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LABORATÓRIO INTERATIVO ===================== -->
+  <section class="section" id="laboratorio">
+    <div class="section-head">
+      <span class="tag">05</span>
+      <h2>Laboratório interativo</h2>
+      <p class="section-note">desenhe livremente. cada traço dispara uma nota — o desenho é também uma partitura.</p>
+    </div>
+
+    <div class="lab-wrap">
+      <canvas id="labCanvas"></canvas>
+      <div class="lab-controls">
+        <button id="clearLab" class="btn-secondary">limpar tela</button>
+        <button id="muteLab" class="btn-secondary">🔈 som ligado</button>
+        <input type="color" id="labColor" value="#7CFFCB" title="cor do traço">
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Experiência Criativa: Explorando Computação e IA — projeto acadêmico construído em HTML, CSS e JavaScript.</p>
+  <p class="mono small">feito no VS Code · hospedado no GitHub Pages</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -66,7 +66,7 @@ O site abre no navegador e atualiza automaticamente a cada alteração salva.
 
 Este projeto está hospedado via **GitHub Pages**:
 
-🔗 `https://SEU-USUARIO.github.io/SEU-REPOSITORIO/`
+🔗 `https://SEU-USUARIO.github.io/SEU-REPOSITORIO/](https://felipe-augusto-ferrer.github.io/Site-Experiencia-Criativa/`
 
 ---
 
@@ -81,4 +81,4 @@ Este projeto está hospedado via **GitHub Pages**:
 
 ## 📚 Contexto acadêmico
 
-Projeto desenvolvido para a disciplina **Experiência Criativa: Explorando Computação e IA**, com foco em explorar, de forma prática, a interseção entre programação criativa, design de interação e inteligência artificial como ferramenta de apoio ao aprendizado e à produção de código.
+Projeto desenvolvido para a disciplina **Experiência Criativa: Explorando Computação e IA**, com foco em explorar, de forma prática, a criação de sites usando HTML, CSS e javaScript usando Inteligência Artificial.
